@@ -44,30 +44,30 @@ Available variables are listed below, along with default values:
       20: rdma
       21: crypto
     iproute_rt_dsfield:
-      '0x00': default
-      '0x02': mincost
-      '0x04': reliability
-      '0x08': throughput
-      '0x10': lowdelay
-      '0x20': priority
-      '0x28': AF11
-      '0x30': AF12
-      '0x38': AF13
-      '0x40': immediate
-      '0x48': AF21
-      '0x50': AF22
-      '0x58': AF23
-      '0x60': flash
-      '0x68': AF31
-      '0x70': AF32
-      '0x78': AF33
-      '0x80': flash-override
-      '0x88': AF41
-      '0x90': AF42
-      '0x98': AF43
-      '0xa0': critical
-      '0xc0': internet
-      '0xe0': network
+      0x00: default
+      0x02: mincost
+      0x04: reliability
+      0x08: throughput
+      0x10: lowdelay
+      0x20: priority
+      0x28: AF11
+      0x30: AF12
+      0x38: AF13
+      0x40: immediate
+      0x48: AF21
+      0x50: AF22
+      0x58: AF23
+      0x60: flash
+      0x68: AF31
+      0x70: AF32
+      0x78: AF33
+      0x80: flash-override
+      0x88: AF41
+      0x90: AF42
+      0x98: AF43
+      0xa0: critical
+      0xc0: internet
+      0xe0: network
     iproute_rt_protos:
       0: unspec
       1: redirect
