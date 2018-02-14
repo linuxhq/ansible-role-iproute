@@ -1,0 +1,29 @@
+---
+- name: Ensure that the iproute package is installed
+  tags: iproute
+  become: true
+  yum:
+    name: iproute
+    state: present
+  register: iproute_yum
+
+- name: Applying iproute configurations
+  tags: iproute
+  become: true
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - { src: ematch_map.j2, dest: /etc/iproute2/ematch_map }
+    - { src: group.j2, dest: /etc/iproute2/group }
+    - { src: nl_protos.j2, dest: /etc/iproute2/nl_protos }
+    - { src: rt_dsfield.j2, dest: /etc/iproute2/rt_dsfield }
+    - { src: rt_protos.j2, dest: /etc/iproute2/rt_protos }
+    - { src: rt_realms.j2, dest: /etc/iproute2/rt_realms }
+    - { src: rt_scopes.j2, dest: /etc/iproute2/rt_scopes }
+    - { src: rt_tables.j2, dest: /etc/iproute2/rt_tables }
+  when: iproute_yum|success
+...
