@@ -25,5 +25,5 @@
     - { src: rt_realms.j2, dest: /etc/iproute2/rt_realms }
     - { src: rt_scopes.j2, dest: /etc/iproute2/rt_scopes }
     - { src: rt_tables.j2, dest: /etc/iproute2/rt_tables }
-  when: iproute_yum|success
+  when: iproute_yum is success
 ...
