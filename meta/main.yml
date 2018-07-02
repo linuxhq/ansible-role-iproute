@@ -1,6 +1,7 @@
 ---
 dependencies: []
 galaxy_info:
+  role_name: iproute
   author: tkimball83
   description: RHEL/CentOS - Advanced IP routing and network device configuration tools
   license: GPLv3
