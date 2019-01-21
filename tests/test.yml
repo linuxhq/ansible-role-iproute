@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  become: true
+  connection: local
   roles:
     - ansible-role-iproute
 ...

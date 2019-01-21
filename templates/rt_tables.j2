@@ -1,7 +1,8 @@
 # {{ ansible_managed }}
-
+# iproute_rt_tables: {{ iproute_rt_tables|length }}
 {% if iproute_rt_tables|length > 0 %}
-{%   for key, value in iproute_rt_tables.iteritems()|sort|reverse %}
+
+{%   for key, value in iproute_rt_tables.items()|sort|reverse %}
 {{ key }}	{{ value }}
 {%   endfor %}
 {% endif %}

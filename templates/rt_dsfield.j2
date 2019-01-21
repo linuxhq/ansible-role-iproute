@@ -1,7 +1,8 @@
 # {{ ansible_managed }}
-
+# iproute_rt_dsfield: {{ iproute_rt_dsfield|length }}
 {% if iproute_rt_dsfield|length > 0 %}
-{%   for key, value in iproute_rt_dsfield.iteritems()|sort %}
+
+{%   for key, value in iproute_rt_dsfield.items()|sort %}
 {{ '%#04x' | format(key) }}	{{ value }}
 {%   endfor %}
 {% endif %}

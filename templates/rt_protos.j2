@@ -1,7 +1,8 @@
 # {{ ansible_managed }}
-
+# iproute_rt_protos: {{ iproute_rt_protos|length }}
 {% if iproute_rt_protos|length > 0 %}
-{%   for key, value in iproute_rt_protos.iteritems()|sort %}
+
+{%   for key, value in iproute_rt_protos.items()|sort %}
 {{ key }}	{{ value }}
 {%   endfor %}
 {% endif %}

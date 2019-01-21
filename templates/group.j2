@@ -1,7 +1,8 @@
 # {{ ansible_managed }}
-
+# iproute_group: {{ iproute_group|length }}
 {% if iproute_group|length > 0 %}
-{%   for key, value in iproute_group.iteritems()|sort %}
+
+{%   for key, value in iproute_group.items()|sort %}
 {{ key }}	{{ value }}
 {%   endfor %}
 {% endif %}

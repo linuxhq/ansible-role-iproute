@@ -16,7 +16,7 @@
     owner: root
     group: root
     mode: 0644
-  with_items:
+  loop:
     - { src: ematch_map.j2, dest: /etc/iproute2/ematch_map }
     - { src: group.j2, dest: /etc/iproute2/group }
     - { src: nl_protos.j2, dest: /etc/iproute2/nl_protos }
@@ -25,5 +25,7 @@
     - { src: rt_realms.j2, dest: /etc/iproute2/rt_realms }
     - { src: rt_scopes.j2, dest: /etc/iproute2/rt_scopes }
     - { src: rt_tables.j2, dest: /etc/iproute2/rt_tables }
+  loop_control:
+    label: "{{ item.src.split('.')[0] }}"
   when: iproute_yum is success
 ...

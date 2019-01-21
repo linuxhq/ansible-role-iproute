@@ -1,7 +1,8 @@
 # {{ ansible_managed }}
-
+# iproute_ematch_map: {{ iproute_ematch_map|length }}
 {% if iproute_ematch_map|length > 0 %}
-{%   for key, value in iproute_ematch_map.iteritems()|sort %}
+
+{%   for key, value in iproute_ematch_map.items()|sort %}
 {{ key }}	{{ value }}
 {%   endfor %}
 {% endif %}

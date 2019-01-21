@@ -1,7 +1,8 @@
 # {{ ansible_managed }}
-
+# iproute_rt_realms: {{ iproute_rt_realms|length }}
 {% if iproute_rt_realms|length > 0 %}
-{%   for key, value in iproute_rt_realms.iteritems()|sort %}
+
+{%   for key, value in iproute_rt_realms.items()|sort %}
 {{ key }}	{{ value }}
 {%   endfor %}
 {% endif %}
